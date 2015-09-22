@@ -3,6 +3,7 @@
 #include <ctime>
 #include <sstream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -25,9 +26,19 @@ string timeToDate(time_t time) {
 }
 
 bool writeDate(string date) {
+    ifstream fileIn("time.csv");
+    string contents;
+    fileIn >> contents;
+    fileIn.close();
+    cout << contents << endl;
+    if (contents.size() > 0){
+        contents += ",";
+    }
     ofstream file;
-    file.open("time.csv", ios_base::app | ios_base::out);
-    file << date << ",";
+    file.open("time.csv", ios_base::trunc);
+    contents += date;
+    cout << contents << endl;
+    file << contents;
     file.close();
 }
 
