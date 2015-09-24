@@ -1,4 +1,4 @@
-# punchcard
+# punchcard 👊🃏
 A small utility to help you keep track of when you leave your desk
 
 Windows only. Portability may be hard since it relies hevaliy on windows.h to monitor keypresses. This also must be built with C++ 11.
